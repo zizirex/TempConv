@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Unit_Converter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="°F" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Z3-4Y-Mhz">
+                                <rect key="frame" x="16" y="119" width="382" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gag-sI-5IA">
+                                <rect key="frame" x="0.0" y="646" width="414" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="kbr-tq-wta" id="dMW-jb-rnQ"/>
+                                </connections>
+                            </pickerView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gxl-LN-hEl">
+                                <rect key="frame" x="129" y="182" width="157" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Celcius"/>
+                                    <segment title="Fahrenheit"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentSwitchTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="A1M-XM-wke"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2Z3-4Y-Mhz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="3Bg-x6-PKw"/>
+                            <constraint firstItem="Gag-sI-5IA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8MA-eu-vz3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2Z3-4Y-Mhz" secondAttribute="trailing" constant="16" id="AEh-gK-hFb"/>
+                            <constraint firstItem="2Z3-4Y-Mhz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="gWf-pj-DzC"/>
+                            <constraint firstItem="Gag-sI-5IA" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ycS-Kr-oTU"/>
+                            <constraint firstItem="Gag-sI-5IA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yge-jJ-Hhe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="segmentSwitch" destination="gxl-LN-hEl" id="AIA-h5-uwN"/>
+                        <outlet property="temperatureLabel" destination="2Z3-4Y-Mhz" id="Z9A-ff-xja"/>
+                        <outlet property="temperaturePicker" destination="Gag-sI-5IA" id="WLZ-Jf-4ix"/>
+                        <outlet property="temperatureRange" destination="kbr-tq-wta" id="bSI-he-8WH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="kbr-tq-wta" customClass="TemperatureRange" customModule="Unit_Converter" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+</document>
